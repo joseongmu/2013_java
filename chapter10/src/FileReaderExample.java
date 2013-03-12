@@ -5,7 +5,8 @@ public class FileReaderExample {
 	public static void main(String[] args) {
 		FileReader reader = null;
 		try {
-			reader = new FileReader("C:\\Users\\Kyungjin\\workspace\\chapter10\\output.txt");
+			reader = new FileReader(
+					"C:\\Users\\Kyungjin\\workspace\\chapter10\\output.txt");
 			while (true) {
 				int data = reader.read();
 				if (data == -1)
@@ -13,18 +14,14 @@ public class FileReaderExample {
 				char ch = (char) data;
 				System.out.print(ch);
 			}
-		}
-		catch (FileNotFoundException fnfe) {
+		} catch (FileNotFoundException fnfe) {
 			System.out.println("파일이 존재하지 않습니다.");
-		}
-		catch (IOException ioe) {
+		} catch (IOException ioe) {
 			System.out.println("파일을 읽을 수 없습니다.");
-		}
-		finally {
+		} finally {
 			try {
 				reader.close();
-			}          
-			catch (Exception e) {
+			} catch (Exception e) {
 			}
 		}
 	}
