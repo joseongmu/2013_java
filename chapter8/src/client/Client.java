@@ -1,6 +1,6 @@
 package client;
 
-import owner.Chairman;
+import company.Chairman;
 
 public class Client {
 	
