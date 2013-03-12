@@ -1,4 +1,4 @@
-package Expression;
+package expression;
 
 public class Constant extends Expression {
 	private double const1;

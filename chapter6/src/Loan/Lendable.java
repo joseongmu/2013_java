@@ -1,4 +1,4 @@
-package Loan;
+package loan;
 
 public interface Lendable {
 	final static boolean STATE_BORROWED = false;

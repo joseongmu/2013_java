@@ -1,4 +1,4 @@
-package Expression;
+package expression;
 
 public abstract class Operation extends Expression{
 	Expression e1;
