@@ -1,11 +1,9 @@
 package Account;
 import java.util.Scanner;
 
-
-
 public class AccountDriver {
 
-	public static void main(String[] args) {		
+	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		String n;
 		String accountNumber;
@@ -16,7 +14,7 @@ public class AccountDriver {
 		System.out.print("당신의 이름을 입력하세요 : ");
 		name = scan.next();
 
-		Account obj = new Account(accountNumber, name,  0);
+		Account obj = new Account(accountNumber, name, 0);
 		obj.printAccount();
 
 		do {
@@ -24,12 +22,12 @@ public class AccountDriver {
 			System.out.print("번호를 입력하세요 : ");
 			n = scan.next();
 			int money;
-			if(n.equals("1")) {
+			if (n.equals("1")) {
 				System.out.print("예금할 금액을 입력하세요 : ");
 				money = scan.nextInt();
 				obj.deposit(money);
 				obj.printAccount();
-			}else if(n.equals("2")) {
+			} else if (n.equals("2")) {
 				System.out.print("인출할 금액을 입력하세요 : ");
 				money = scan.nextInt();
 				try {
@@ -40,7 +38,6 @@ public class AccountDriver {
 				}
 				obj.printAccount();
 			}
-		}while(!n.equals("3"));
+		} while (!n.equals("3"));
 	}
 }
-
