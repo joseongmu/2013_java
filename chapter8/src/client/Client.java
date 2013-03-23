@@ -2,22 +2,19 @@ package client;
 
 import company.Chairman;
 
-public class Client {
+public class Client {//ë‹¤ë¥¸ íŒ¨í‚¤ì˜ ìƒì†ë°›ì§€ ì•Šì€ í´ë˜ìŠ¤
 	
-	public static void main(String args[]){//´Ù¸¥ ÆĞÅ°ÀÇ »ó¼Ó¹ŞÁö ¾ÊÀº Å¬·¡½º
-		Chairman client = new Chairman("ABC123", 100);
+	public static void main(String args[]){
+		Chairman client = new Chairman("ABC123", 100, "Seoul");
 		
 		System.out.println(client.goodsCode);
-		//System.out.println(client.stockNum); protected·Î ¼±¾ğµÈ °ÍÀº »ç¿ë¸øÇÕ´Ï´Ù.
+		//System.out.println(client.totalStock); private ì‚¬ìš©ë¶ˆê°€
+		//System.out.println(client.stockNum); protected ì‚¬ìš©ë¶ˆê°€
+		//System.out.println(client.branch); ìƒëµ ì‚¬ìš©ë¶ˆê°€
 		
-		System.out.println(client.getStockNum());
-		//System.out.println(client.totalStock); private·Î ¼±¾ğµÈ °ÍÀº »ç¿ë¸øÇÕ´Ï´Ù.
-		
-		//client.addStock(50);  º¯°æÀÚ°¡ ¾ø´Â °ÍÀ» »ç¿ë¸øÇÕ´Ï´Ù.
-		//client.subtractStock(30);
-		//System.out.println(client.stockNum);
-		
-		//client.subtractStock(130);
-		//System.out.println(client.stockNum);
+		System.out.println(client.getGoodsCode());
+		//client.addStock(50); private ì‚¬ìš©ë¶ˆê°€
+		//client.subtractStock(30); protected ì‚¬ìš©ë¶ˆê°€
+		//System.out.println(client.getBranch()); ìƒëµ ì‚¬ìš©ë¶ˆê°€
 	}
 }

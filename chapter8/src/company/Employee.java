@@ -1,21 +1,18 @@
 package company;
 
-public class Employee {
+public class Employee {//ê°™ì€ íŒ¨í‚¤ì§€ì˜ ìƒì†ì„ ë°›ì§€ ì•Šì€ í´ë˜ìŠ¤
 	
-	public static void main(String args[]){//°°Àº ÆĞÅ°ÁöÀÇ »ó¼ÓÀ» ¹ŞÁö ¾ÊÀº Å¬·¡½º
-		Chairman employee = new Chairman("ABC123", 100);
+	public static void main(String args[]){
+		Chairman employee = new Chairman("ABC123", 100, "Seoul");
 		
 		System.out.println(employee.goodsCode);
+		//System.out.println(employee.totalStock); private ì‚¬ìš© ë¶ˆê°€
 		System.out.println(employee.stockNum);
+		System.out.println(employee.branch);
 		
-		System.out.println(employee.getStockNum());
-		//System.out.println(employee.totalStock); private·Î ¼±¾ğµÈ °ÍÀº »ç¿ë¸øÇÕ´Ï´Ù.
-		
-		employee.addStock(50);
+		System.out.println(employee.getGoodsCode());
+		//employee.addStock(50); private ì‚¬ìš© ë¶ˆê°€
 		employee.subtractStock(30);
-		System.out.println(employee.stockNum);
-		employee.subtractStock(130);
-		
-		System.out.println(employee.stockNum);
+		System.out.println(employee.getBranch());
 	}
 }

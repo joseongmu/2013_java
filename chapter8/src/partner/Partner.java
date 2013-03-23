@@ -2,26 +2,23 @@ package partner;
 
 import company.Chairman;
 
-public class Partner extends Chairman{//´Ù¸¥ ÆĞÅ°ÁöÀÇ »ó¼Ó¹ŞÀº Å¬·¡½º
+public class Partner extends Chairman{//ë‹¤ë¥¸ íŒ¨í‚¤ì§€ì˜ ìƒì†ë°›ì€ í´ë˜ìŠ¤
 	
-	public Partner(String goodsCode, int stockNum) {
-		super(goodsCode, stockNum);
+	public Partner(String goodsCode, int stockNum, String branch) {
+		super(goodsCode, stockNum, branch);
 	}
 	
 	public static void main(String args[]){
-		Partner partner = new Partner("ABC123", 100);
+		Partner partner = new Partner("ABC123", 100, "Seoul");
 		
 		System.out.println(partner.goodsCode);
+		//System.out.println(partner.totalStock); private ì‚¬ìš©ë¶ˆê°€
 		System.out.println(partner.stockNum);
+		//System.out.println(partner.branch); ìƒëµ ì‚¬ìš©ë¶ˆê°€
 		
-		System.out.println(partner.getStockNum());
-		//System.out.println(partner.totalStock); private·Î ¼±¾ğµÈ °ÍÀº »ç¿ë¸øÇÕ´Ï´Ù.
-		
-		//partner.addStock(50); º¯°æÀÚ »ı·«½Ã »ç¿ë¸øÇÕ´Ï´Ù.
-		//partner.subtractStock(30);
-		System.out.println(partner.stockNum);
-		
-		//partner.subtractStock(130);
-		System.out.println(partner.stockNum);
+		System.out.println(partner.getGoodsCode());
+		//partner.addStock(50); private ì‚¬ìš©ë¶ˆê°€
+		partner.subtractStock(30);
+		//System.out.println(partner.getBranch()); ìƒëµ ì‚¬ìš©ë¶ˆê°€
 	}
 }

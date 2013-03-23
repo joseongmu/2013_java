@@ -1,24 +1,34 @@
 package company;
-
-public class Chairman { //»óÇ° Àç°í Å¬·¡½º
-	public String goodsCode; //»óÇ°ÄÚµå ÇÊµå
-	private int totalStock; //´©Àû Àç°í·®
-	protected int stockNum; //Àç°í¼ö·® ÇÊµå
+/*
+ * í´ë˜ìŠ¤ê°€ ì†í•œ íŒ¨í‚¤ì§€ì˜ ìœ„ì¹˜ 
+ * ì ‘ê·¼ì œì–´ KeyWordì— ë”°ë¥¸ ë©”ì†Œë“œì™€ ë³€ìˆ˜ì˜ ì ‘ê·¼ ê¶Œí•œì„ ì•Œì•„ë³´ê¸° ìœ„í•œ ì˜ˆì œì…ë‹ˆë‹¤.
+ */
+public class Chairman {
 	
-	public Chairman(String goodsCode, int stockNum) { //»ı¼ºÀÚ
+	public String goodsCode;
+	private int totalStock;
+	protected int stockNum;
+	String branch;
+	
+	public Chairman(String goodsCode, int stockNum, String branch) {
 		this.goodsCode = goodsCode;
 		this.stockNum = stockNum;
 		this.totalStock = stockNum;
+		this.branch = branch;
 	}
 	
-	void addStock(int amount) { //Àç°í¸¦ ´õÇÏ´Â ¸Ş¼Òµå
+	public String getGoodsCode(){
+		return this.goodsCode;
+	}
+	
+	private void addStock(int amount) {
 		this.stockNum += amount;
 		this.totalStock += amount;
 	}
 	
-	int subtractStock (int amount) { //Àç°í¸¦ »©´Â ¸Ş¼Òµå
+	protected int subtractStock (int amount) {
 		if (this.stockNum < amount) {
-			System.out.println("Àç°í°¡ ºÎÁ·ÇÕ´Ï´Ù.");
+			System.out.println("ì¬ê³ ê°€ ë¶€ì¡±í•©ë‹ˆë‹¤.");
 		} else{
 			this.stockNum -= amount;
 		}
@@ -26,24 +36,21 @@ public class Chairman { //»óÇ° Àç°í Å¬·¡½º
 		return amount;
 	}
 	
-	public int getStockNum() { //Àç°í¸¦ ¸®ÅÏÇÏ´Â ¸Ş¼Òµå
-		return this.stockNum;
+	String getBranch() {
+		return this.branch;
 	}
 	
-	public static void main(String args[]){//ÀÚ½ÅÀÇ Á¤º¸´Â º¯°æÀÚ¿¡ »ó°ü¾øÀÌ Á¢±Ù °¡´ÉÇÕ´Ï´Ù.
-		Chairman chairman = new Chairman("ABC123", 100);
+	public static void main(String args[]){
+		Chairman chairman = new Chairman("ABC123", 100, "Seoul");
 		
 		System.out.println(chairman.goodsCode);
-		System.out.println(chairman.stockNum);
-		
-		System.out.println(chairman.getStockNum());
 		System.out.println(chairman.totalStock);
+		System.out.println(chairman.stockNum);
+		System.out.println(chairman.branch);
 		
+		System.out.println(chairman.getGoodsCode());
 		chairman.addStock(50);
 		chairman.subtractStock(30);
-		System.out.println(chairman.stockNum);
-		
-		chairman.subtractStock(130);
-		System.out.println(chairman.stockNum);
+		System.out.println(chairman.getBranch());
 	}
 }

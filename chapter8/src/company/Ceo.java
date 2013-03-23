@@ -1,25 +1,22 @@
 package company;
 
-public class Ceo extends Chairman {//°°Àº ÆĞÅ°Áö¿¡ »ó¼ÓÀ» ¹ŞÀº Å¬·¡½º
+public class Ceo extends Chairman {//ê°™ì€ íŒ¨í‚¤ì§€ì— ìƒì†ì„ ë°›ì€ í´ë˜ìŠ¤
 
-	public Ceo(String goodsCode, int stockNum) {
-		super(goodsCode, stockNum);
+	public Ceo(String goodsCode, int stockNum, String branch) {
+		super(goodsCode, stockNum, branch);
 	}
 	
 	public static void main(String args[]){
-		Ceo ceo = new Ceo("ABC123", 100);
+		Ceo ceo = new Ceo("ABC123", 100, "Seoul");
 		
 		System.out.println(ceo.goodsCode);
-		
+		//System.out.println(ceo.totalStock); private ì‚¬ìš©ë¶ˆê°€
 		System.out.println(ceo.stockNum);
-		System.out.println(ceo.getStockNum());
-		//System.out.println(ceo.totalStock); private·Î ¼±¾ğµÈ °ÍÀº »ç¿ë¸øÇÕ´Ï´Ù.
+		System.out.println(ceo.branch);
 		
-		ceo.addStock(50);
+		System.out.println(ceo.getGoodsCode());
+		//ceo.addStock(50); private ì‚¬ìš©ë¶ˆê°€
 		ceo.subtractStock(30);
-		System.out.println(ceo.stockNum);
-		
-		ceo.subtractStock(130);
-		System.out.println(ceo.stockNum);
+		System.out.println(ceo.getBranch());
 	}
 }
