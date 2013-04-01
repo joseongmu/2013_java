@@ -1,4 +1,5 @@
-package kr.ac.mju.dislab.java.account;
+package kr.ac.mju.dislab.java.ex9_2.account;
+
 import java.util.Scanner;
 
 public class AccountDriver {
@@ -22,7 +23,7 @@ public class AccountDriver {
 			System.out.print("번호를 입력하세요 : ");
 			selection = scan.nextInt();
 			int money;
-			
+
 			if (selection == 1) {
 				System.out.print("예금할 금액을 입력하세요 : ");
 				money = scan.nextInt();
@@ -39,9 +40,9 @@ public class AccountDriver {
 				}
 				obj.printAccount();
 			}
-			
+
 		} while (!(selection == 3));
-		
+
 		scan.close();
 	}
 }

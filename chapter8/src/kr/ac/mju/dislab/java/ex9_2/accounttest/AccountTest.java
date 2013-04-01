@@ -1,57 +1,57 @@
-package kr.ac.mju.dislab.java.accounttest;
+package kr.ac.mju.dislab.java.ex9_2.accounttest;
 
 import static org.junit.Assert.*;
-import kr.ac.mju.dislab.java.account.Account;
+import kr.ac.mju.dislab.java.ex9_2.account.Account;
 
 import org.junit.Test;
 
 public class AccountTest {
 	private Account account;
-	
+
 	@Test
-	public void testConstructor(){
+	public void testConstructor() {
 		account = new Account("1234567890", "hong", 1000);
-		
+
 		assertEquals("1234567890", account.getAccountNumber());
 		assertEquals("hong", account.getName());
 		assertEquals(1000, account.getBalance(), 0.00000001);
 	}
-	
+
 	@Test
-	public void testWithdraw(){
+	public void testWithdraw() {
 		account = new Account("1234567890", "hong", 1000);
-		
+
 		account.withdraw(100);
 		assertEquals(900, account.getBalance(), 0.00000001);
 	}
-	
+
 	@Test
-	public void testNegativeWithdraw(){
+	public void testNegativeWithdraw() {
 		account = new Account("1234567890", "hong", 1000);
-		
+
 		assertFalse(account.withdraw(-100));
 	}
-	
+
 	@Test
-	public void testWithdrawForNotEnoughBalance(){
+	public void testWithdrawForNotEnoughBalance() {
 		account = new Account("1234567890", "hong", 1000);
-		
+
 		assertFalse(account.withdraw(1100));
 	}
-	
+
 	@Test
-	public void testDeposit(){
+	public void testDeposit() {
 		account = new Account("1234567890", "hong", 1000);
-		
+
 		account.deposit(100);
 		assertEquals(1100, account.getBalance(), 0.00000001);
 	}
-	
+
 	@Test
-	public void testNegativeDeposit(){
+	public void testNegativeDeposit() {
 		account = new Account("1234567890", "hong", 1000);
-		
+
 		assertFalse(account.deposit(-100));
 	}
-	
+
 }

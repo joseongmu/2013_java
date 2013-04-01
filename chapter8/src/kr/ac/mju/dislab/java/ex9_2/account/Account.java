@@ -1,16 +1,33 @@
-package kr.ac.mju.dislab.java.account;
+package kr.ac.mju.dislab.java.ex9_2.account;
 
 public class Account {
 	private String accountNumber; // 계좌번호
 	private String name; // 이름
 	private int balance; // 잔액
-	
-	public String getAccountNumber() {return accountNumber;}
-	public void setAccountNumber(String accountNumber) {this.accountNumber = accountNumber;}
-	public String getName() {return name;}
-	public void setName(String name) {this.name = name;}
-	public int getBalance() {return balance;}
-	public void setBalance(int balance) {this.balance = balance;}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getBalance() {
+		return balance;
+	}
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
 
 	public Account(String accountNumber, String name, int balance) {
 		this.accountNumber = accountNumber;
@@ -18,18 +35,18 @@ public class Account {
 		this.balance = balance;
 	}
 
-	public boolean deposit(int money){ // 예금
-		if (0 > money){
+	public boolean deposit(int money) { // 예금
+		if (0 > money) {
 			return false;
-		} 
+		}
 		balance += money;
 		return true;
 	}
 
-	public boolean withdraw(int money){ // 인출
+	public boolean withdraw(int money) { // 인출
 		if (balance < money) {
 			return false;
-		} else if(money < 0){
+		} else if (money < 0) {
 			return false;
 		}
 		balance -= money;
