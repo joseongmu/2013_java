@@ -1,4 +1,4 @@
-package information;
+package kr.ac.mju.dislab.java.ex11.information;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -6,23 +6,22 @@ import java.lang.reflect.Method;
 public class ClassInformation {
 	
 	public ClassInformation(Object obj){
-		
-		Class cls = obj.getClass();
+		Class<?> cls = obj.getClass();
 		String name = cls.getName();
-		System.out.println("Å¬·¡½º ÀÌ¸§: " + name);
+		System.out.println("í´ë˜ìŠ¤ ì´ë¦„: " + name);
 		
-		Class superCls = cls.getSuperclass();
+		Class<?> superCls = cls.getSuperclass();
 		String superName = superCls.getName();
-		System.out.println("½´ÆÛÅ¬·¡½º ÀÌ¸§: " + superName);
+		System.out.println("ìŠˆí¼í´ë˜ìŠ¤ ì´ë¦„: " + superName);
 		
 		Field field[] = cls.getDeclaredFields();
-		System.out.println("ÇÊµå: ");
+		System.out.println("í•„ë“œ: ");
 		for (int cnt = 0; cnt < field.length; cnt++){
 			System.out.println("	" + field[cnt]);
 		}
 		
 		Method method[] = cls.getDeclaredMethods();
-		System.out.println("¸Ş¼Òµå: ");
+		System.out.println("ë©”ì†Œë“œ: ");
 		for (int cnt = 0; cnt < method.length; cnt++){
 			System.out.println("	" + method[cnt]);
 		}
